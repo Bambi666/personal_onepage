@@ -9,6 +9,7 @@
     align-items: center;
     padding: 0 65px 0 50px;
     transition: height, 0.3s;
+    z-index: 10;
 
     .left {
         display: flex;
@@ -16,10 +17,13 @@
 
         .logo {
             margin-right: 50px;
-            height: 60px;
-            width: 60px;
-            background: indigo;
-            border-radius: 50%;
+
+            img {
+                box-shadow: 0 3px 3px rgba($color: #000000, $alpha: 0.7);
+                border-radius: 60%;
+                height: 60px;
+                width: 60px;
+            }
         }
 
         .menu {
@@ -42,13 +46,13 @@
                         margin-top: 20px;
                         height: 3px;
                         width: 0;
-                        background: orange;
+                        background: yellowgreen;
                         transition: width 0.5s;
 
                     }
 
                     &:hover {
-                        color: orange;
+                        color: yellowgreen;
 
                         &:after {
                             width: 100%;
@@ -96,11 +100,10 @@
         .left {
 
             .logo {
-                // margin-right: 50px;
-                height: 50px;
-                width: 50px;
-                background: tomato;
-                // border-radius: 50%;
+                img {
+                    height: 50px;
+                    width: 50px;
+                }
             }
         }
     }

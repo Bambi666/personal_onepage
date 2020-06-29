@@ -357,6 +357,7 @@ template {
   padding: 0 65px 0 50px;
   -webkit-transition: height, 0.3s;
   transition: height, 0.3s;
+  z-index: 10;
 }
 
 .top-bar .left {
@@ -370,10 +371,14 @@ template {
 
 .top-bar .left .logo {
   margin-right: 50px;
+}
+
+.top-bar .left .logo img {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7);
+  border-radius: 60%;
   height: 60px;
   width: 60px;
-  background: indigo;
-  border-radius: 50%;
 }
 
 .top-bar .left .menu {
@@ -400,13 +405,13 @@ template {
   margin-top: 20px;
   height: 3px;
   width: 0;
-  background: orange;
+  background: yellowgreen;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
 
 .top-bar .left .menu li a:hover {
-  color: orange;
+  color: yellowgreen;
 }
 
 .top-bar .left .menu li a:hover:after {
@@ -449,19 +454,123 @@ template {
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.top-bar.active .left .logo {
+.top-bar.active .left .logo img {
   height: 50px;
   width: 50px;
-  background: tomato;
 }
 
 .driver {
-  background-image: url("../images/vegetables-3017412_1920.jpg");
+  position: relative;
+  background-image: url("../images/onion-2699531_1920.jpg");
   background-position: center, center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
+}
+
+.driver:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), black);
+}
+
+.driver .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  z-index: 2;
+}
+
+.driver .container .driver-text {
+  padding-top: 150px;
+}
+
+.driver .container .driver-text span {
+  color: yellowgreen;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.driver .container .driver-text h1 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.driver .container .driver-text h1 {
+  font-size: 40px;
+}
+
+@media screen and (min-width: 320px) {
+  .driver .container .driver-text h1 {
+    font-size: calc(40px + 35 * ((100vw - 320px) / 910));
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  .driver .container .driver-text h1 {
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 640px) {
+  .driver .container .driver-text h1 {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.driver .container .driver-text h1 .special-heading h1 {
+  color: yellowgreen;
+}
+
+.driver .container .driver-text h2 {
+  margin: 0;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.driver .container .driver-text h2 {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 320px) {
+  .driver .container .driver-text h2 {
+    font-size: calc(30px + 25 * ((100vw - 320px) / 910));
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  .driver .container .driver-text h2 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 640px) {
+  .driver .container .driver-text h2 {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 * {
@@ -475,8 +584,8 @@ body {
 }
 
 body .container {
-  max-width: 1170px;
-  padding: 0 20px 0 20px;
+  max-width: 1260px;
+  padding: 0 15px 0 15px;
   margin: 0 auto;
 }
 
