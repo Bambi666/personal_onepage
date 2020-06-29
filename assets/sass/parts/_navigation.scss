@@ -1,5 +1,5 @@
 .top-bar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     // justify-content: center;
     height: 100px;
@@ -88,6 +88,7 @@
     }
 
     &.active {
+        position: fixed;
         background: #191919;
         height: 70px;
         box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
