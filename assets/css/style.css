@@ -424,23 +424,29 @@ template {
   display: flex;
 }
 
-.top-bar .social-media li a {
-  padding-left: 25px;
-  position: relative;
+.top-bar .social-media li {
+  height: 30px;
+  width: 30px;
   top: 0;
   -webkit-filter: invert(0.6);
           filter: invert(0.6);
-  -webkit-transition: top, 0.3s, -webkit-filter;
-  transition: top, 0.3s, -webkit-filter;
-  transition: top, filter, 0.3s;
-  transition: top, filter, 0.3s, -webkit-filter;
+  -webkit-transition: top, 0.3s;
+  transition: top, 0.3s;
+  margin-left: 15px;
+  position: relative;
+}
+
+.top-bar .social-media li a {
+  margin: 7px 0;
+  text-align: center;
+  display: block;
 }
 
 .top-bar .social-media li a img {
   width: 16px;
 }
 
-.top-bar .social-media li a:hover {
+.top-bar .social-media li:hover {
   top: -5px;
   -webkit-filter: invert(1);
           filter: invert(1);
@@ -539,38 +545,265 @@ template {
   }
 }
 
-.driver .container .driver-text h1 .special-heading h1 {
-  color: yellowgreen;
+.driver .container .driver-text div {
+  height: 80px;
 }
 
-.driver .container .driver-text h2 {
+.driver .container .driver-text div h1 {
+  opacity: 1;
+  color: yellowgreen;
+  top: 0px;
+}
+
+.driver .container .driver-text div h1.reset {
+  opacity: 0;
+  top: 0px;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+}
+
+.driver .container .driver-text div h1.in {
+  opacity: 1;
+  top: 0px;
+  -webkit-transition: top, opacity, 0.2s;
+  transition: top, opacity, 0.2s;
+}
+
+.driver .container .driver-text div h1.out {
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: top, 0.3s;
+  transition: top, 0.3s;
+}
+
+h2 {
   margin: 0;
   font-weight: 700;
   color: white;
   margin-bottom: 30px;
 }
 
-.driver .container .driver-text h2 {
+h2 {
   font-size: 30px;
 }
 
 @media screen and (min-width: 320px) {
-  .driver .container .driver-text h2 {
+  h2 {
     font-size: calc(30px + 25 * ((100vw - 320px) / 910));
   }
 }
 
 @media screen and (min-width: 1230px) {
-  .driver .container .driver-text h2 {
+  h2 {
     font-size: 55px;
   }
 }
 
 @media (max-width: 640px) {
-  .driver .container .driver-text h2 {
+  h2 {
     text-align: center;
     width: 100%;
   }
+}
+
+.about {
+  background: #191919;
+}
+
+.about .container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.about .container .picture {
+  width: 470px;
+}
+
+@media (max-width: 640px) {
+  .about .container .picture {
+    width: 90%;
+    margin: 0 auto;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+.about .container .picture img {
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100%;
+     object-position: 100%;
+  display: block;
+  max-width: 100%;
+  -webkit-filter: grayscale(0.5);
+          filter: grayscale(0.5);
+}
+
+.about .container .description {
+  padding: 0 20px 0 20px;
+  width: 50%;
+}
+
+@media (max-width: 640px) {
+  .about .container .description {
+    width: 100%;
+  }
+}
+
+.about .container .description h2 {
+  padding-top: 50px;
+}
+
+.about .container .description p {
+  color: #9B9EA8;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.about .container .description .tabs {
+  color: white;
+}
+
+.about .container .description .tabs ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .container .description .tabs ul li {
+  margin-right: 25px;
+}
+
+.about .container .description .tabs ul li a {
+  color: white;
+  font-size: 18px;
+}
+
+.about .container .description .tabs ul li a:after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  height: 3px;
+  width: 40%;
+  background: #808080;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.about .container .description .tabs ul li a:hover {
+  color: yellowgreen;
+}
+
+.about .container .description .tabs ul li a:hover:after {
+  width: 100%;
+  background: yellowgreen;
+}
+
+.about .container .description .tabs ul li a.active {
+  color: #ff0101;
+}
+
+.service {
+  background: #101010;
+  height: 1000px;
+}
+
+.service .container .description {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+@media (max-width: 640px) {
+  .service .container .description {
+    width: 100%;
+  }
+}
+
+.service .container .description h2 {
+  padding-top: 50px;
+}
+
+.service .container .description p {
+  color: #9B9EA8;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.service .container .tiles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+  margin-top: 70px;
+}
+
+.service .container .tiles a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 30%;
+  height: 350px;
+  margin: 0 15px 30px 15px;
+  top: 0;
+  -webkit-transition: top ease 0.5s;
+  transition: top ease 0.5s;
+}
+
+.service .container .tiles a:hover {
+  top: -10px;
+}
+
+.service .container .tiles a:hover .tile {
+  background-color: #EF3F62;
+  -webkit-transition: background-color 0.6s ease-out;
+  transition: background-color 0.6s ease-out;
+}
+
+.service .container .tiles a:hover .tile p {
+  color: white;
+}
+
+.service .container .tiles a .tile {
+  background: #191919;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.service .container .tiles a .tile img {
+  width: 70px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.service .container .tiles a .tile h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+
+.service .container .tiles a .tile p {
+  color: #9B9EA8;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 * {
@@ -593,5 +826,35 @@ body ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+body h2 {
+  margin: 0;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+
+body h2 {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 320px) {
+  body h2 {
+    font-size: calc(30px + 25 * ((100vw - 320px) / 910));
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  body h2 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 640px) {
+  body h2 {
+    text-align: center;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

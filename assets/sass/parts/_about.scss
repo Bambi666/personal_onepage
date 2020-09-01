@@ -1,0 +1,104 @@
+.about {
+    background: #191919;
+    // height: 1000px;
+
+    .container {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        // flex-wrap: wrap;
+
+        .picture {
+            width: 470px;
+
+            @media(max-width: 640px) {
+                width: 90%;
+                margin: 0 auto;
+                align-content: center;
+
+            }
+
+            img {
+                border-radius: 5px;
+                object-fit: cover;
+                object-position: 100%;
+                display: block;
+                max-width: 100%;
+                filter: grayscale(0.5);
+            }
+
+        }
+
+        .description {
+            padding: 0 20px 0 20px;
+            width: 50%;
+
+            @media(max-width: 640px) {
+                // display: block;
+                width: 100%;
+            }
+
+            h2 {
+                padding-top: 50px;
+            }
+
+            p {
+                color: #9B9EA8;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            .tabs {
+                color: white;
+                // align-items: center;
+
+                ul {
+                    display: flex;
+
+                    li {
+                        margin-right: 25px;
+
+                        a {
+                            color: white;
+                            font-size: 18px;
+
+
+                            &:after {
+                                content: "";
+                                display: block;
+                                margin-top: 10px;
+                                height: 3px;
+                                width: 40%;
+                                background: #808080;
+                                transition: width 0.5s;
+                            }
+
+                            &:hover {
+                                color: yellowgreen;
+
+                                &:after {
+                                    width: 100%;
+                                    background: yellowgreen;
+                                }
+                            }
+
+
+                            &.active {
+
+                                color: #ff0101;
+
+
+                            }
+
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

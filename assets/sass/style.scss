@@ -4,6 +4,8 @@
 
 @import "parts/navigation";
 @import "parts/driver";
+@import "parts/about";
+@import "parts/service";
 
 * {
     box-sizing: border-box;
@@ -23,5 +25,18 @@ body {
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    h2 {
+        margin: 0;
+        @include fluid-type (320px, 1230px, 30px, 55px);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 30px;
+
+        @media(max-width: 640px) {
+            text-align: center;
+            width: 100%;
+        }
     }
 }
