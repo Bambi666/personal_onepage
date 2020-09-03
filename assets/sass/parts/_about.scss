@@ -53,48 +53,43 @@
 
             .tabs {
                 color: white;
-                // align-items: center;
+                display: flex;
 
-                ul {
-                    display: flex;
+                div {
+                    margin-right: 25px;
 
-                    li {
-                        margin-right: 25px;
+                    a {
+                        width: 25%;
+                        color: white;
+                        font-size: 18px;
 
-                        a {
-                            color: white;
-                            font-size: 18px;
+                        &:after {
+                            content: "";
+                            display: block;
+                            margin-top: 10px;
+                            height: 3px;
+                            width: 40%;
+                            background: #808080;
+                            transition: width 0.5s;
+                        }
 
+                        &:hover {
+                            color: yellowgreen;
 
                             &:after {
-                                content: "";
-                                display: block;
-                                margin-top: 10px;
-                                height: 3px;
-                                width: 40%;
-                                background: #808080;
-                                transition: width 0.5s;
+                                width: 100%;
+                                background: yellowgreen;
                             }
+                        }
 
-                            &:hover {
-                                color: yellowgreen;
+                        &.tab-active {
 
-                                &:after {
-                                    width: 100%;
-                                    background: yellowgreen;
-                                }
+                            color: yellowgreen;
+
+                            &:after {
+                                width: 100%;
+                                background: yellowgreen;
                             }
-
-
-                            &.active {
-
-                                color: #ff0101;
-
-
-                            }
-
-
-
                         }
                     }
                 }
