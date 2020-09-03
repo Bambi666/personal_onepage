@@ -673,23 +673,24 @@ h2 {
 }
 
 .about .container .description .tabs {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about .container .description .tabs div {
+  color: #8C8F98;
   margin-right: 25px;
 }
 
-.about .container .description .tabs div a {
+.about .container .description .tabs .tab {
+  background: none;
   width: 25%;
   color: white;
   font-size: 18px;
+  float: left;
+  border: none;
+  outline: none;
+  padding: 15px;
+  padding-left: 0;
+  text-align: left;
 }
 
-.about .container .description .tabs div a:after {
+.about .container .description .tabs .tab:after {
   content: "";
   display: block;
   margin-top: 10px;
@@ -700,22 +701,46 @@ h2 {
   transition: width 0.5s;
 }
 
-.about .container .description .tabs div a:hover {
+.about .container .description .tabs .tab:hover {
   color: yellowgreen;
 }
 
-.about .container .description .tabs div a:hover:after {
+.about .container .description .tabs .tab:hover:after {
   width: 100%;
   background: yellowgreen;
 }
 
-.about .container .description .tabs div a.tab-active {
+.about .container .description .tabs .tab.active {
   color: yellowgreen;
 }
 
-.about .container .description .tabs div a.tab-active:after {
+.about .container .description .tabs .tab.active:after {
   width: 100%;
   background: yellowgreen;
+}
+
+.about .container .description .tabs .tabs-content {
+  display: none;
+  padding-top: 60px;
+  max-width: 70%;
+}
+
+.about .container .description .tabs .tabs-content div {
+  margin-top: 30px;
+}
+
+.about .container .description .tabs .tabs-content div h4 {
+  font-size: 18px;
+  font-weight: 500;
+  display: inline;
+}
+
+.about .container .description .tabs .tabs-content div p {
+  display: inline;
+}
+
+.about .container .description .tabs .tabs-content.active {
+  display: block;
 }
 
 .service {

@@ -52,45 +52,76 @@
             }
 
             .tabs {
-                color: white;
-                display: flex;
+                color: #8C8F98;
+                margin-right: 25px;
 
-                div {
-                    margin-right: 25px;
+                .tab {
+                    background: none;
+                    width: 25%;
+                    color: white;
+                    font-size: 18px;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    padding: 15px;
+                    padding-left: 0;
+                    text-align: left;
 
-                    a {
-                        width: 25%;
-                        color: white;
-                        font-size: 18px;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        margin-top: 10px;
+                        height: 3px;
+                        width: 40%;
+                        background: #808080;
+                        transition: width 0.5s;
+                    }
+
+                    &:hover {
+                        color: yellowgreen;
 
                         &:after {
-                            content: "";
-                            display: block;
-                            margin-top: 10px;
-                            height: 3px;
-                            width: 40%;
-                            background: #808080;
-                            transition: width 0.5s;
+                            width: 100%;
+                            background: yellowgreen;
+                        }
+                    }
+
+                    &.active {
+
+                        color: yellowgreen;
+
+                        &:after {
+                            width: 100%;
+                            background: yellowgreen;
+                        }
+                    }
+                }
+
+                .tabs-content {
+                    display: none;
+                    padding-top: 60px;
+                    max-width: 70%;
+
+                    div {
+                        margin-top: 30px;
+
+                        h4 {
+                            font-size: 18px;
+                            font-weight: 500;
+                            display: inline;
+
                         }
 
-                        &:hover {
-                            color: yellowgreen;
-
-                            &:after {
-                                width: 100%;
-                                background: yellowgreen;
-                            }
+                        p {
+                            display: inline;
                         }
+                    }
 
-                        &.tab-active {
 
-                            color: yellowgreen;
 
-                            &:after {
-                                width: 100%;
-                                background: yellowgreen;
-                            }
-                        }
+                    &.active {
+                        display: block;
                     }
                 }
             }
